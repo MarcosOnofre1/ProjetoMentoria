@@ -22,7 +22,6 @@ class SecondFragment : Fragment() {
     ): View {
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onDestroyView() {
@@ -33,11 +32,10 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnNextPage2.setOnClickListener{ onBtnNextPageClicked() }
-
     }
 
     private fun onBtnNextPageClicked() {
-        findNavController().navigate(R.id.thirdFragment)
-
+        val name = binding.edtName.text.toString()
+        findNavController().navigate(SecondFragmentDirections.toThirdFragment(name))
     }
 }

@@ -16,8 +16,6 @@ class ThirdFragment : Fragment() {
 
     private val args: ThirdFragmentArgs by navArgs()
 
-    private var name = ""
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,12 +28,8 @@ class ThirdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.textThirdPageName.text = args.name
 
-//        name = args.name
-//
-//        binding.apply {
-//           textThirdPageName.text = name
-//        }
     }
 
 }
